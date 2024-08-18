@@ -8,7 +8,7 @@ const ProductCard = ({images,name,price}) => {
   return (
     <NavLink>
       <div className='overflow-hidden transform duration-300 cursor-pointer hover:scale-95 px-4'>
-      <img src={imgUrl} alt="" className='rounded-lg w-[400px] h-[400px]'/>
+      <img src={imageUrl} alt="" className='rounded-lg w-[400px] h-[400px]'/>
       <div className='p-2 md:p-4 text-black/[0.9]'>
         <h2 className='text-sm md:text-base font-semibold'>{name}</h2>
         <div className='flex items-center text-black/[0.5]'>
