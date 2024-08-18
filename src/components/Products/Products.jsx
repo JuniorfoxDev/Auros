@@ -37,7 +37,9 @@ const Products = () => {
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-10 md:px-0'>
         {products.slice(0,7).map(product => {
             <div className='overflow-hidden transform duration-300 cursor-pointer hover:scale-95 px-4'>
-            <img src={product.images[0].url} alt="" className='rounded-lg w-[400px] h-[400px]'/>
+            {product.images && product.images.length > 0 && (
+                <img src={product.images[0].url} alt={product.name} className="rounded-lg w-[400px] h-[400px]" />
+            )}
             <div className='p-2 md:p-4 text-black/[0.9]'>
               <h2 className='text-sm md:text-base font-semibold'>{product.name}</h2>
               <div className='flex items-center text-black/[0.5]'>

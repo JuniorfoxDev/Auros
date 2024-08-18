@@ -4,8 +4,7 @@ import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
 const ProductCard = ({images,name,price}) => {
-  const imageUrl = images && images.length > 0 ? images[0].url : '/path-to-your-default-image.jpg';
-  return (
+    return (
     <NavLink>
       <div className='overflow-hidden transform duration-300 cursor-pointer hover:scale-95 px-4'>
       <img src={imageUrl} alt="" className='rounded-lg w-[400px] h-[400px]'/>
