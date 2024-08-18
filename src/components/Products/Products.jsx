@@ -6,6 +6,8 @@ import { NavLink } from 'react-router-dom'
 
 const Products = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     fetchProducts();
 }, []);
@@ -29,6 +31,9 @@ const Products = () => {
   return (
     <div className='h-auto px-3 md:px-28 py-14'>
         <h2 className='text-3xl font-bold  py-6'>All Products</h2>
+        {loading ? (
+                    <p>Loading...</p>
+                ) : (
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-10 md:px-0'>
         {products.slice(0,7).map(product => {
             <div className='overflow-hidden transform duration-300 cursor-pointer hover:scale-95 px-4'>
@@ -43,6 +48,7 @@ const Products = () => {
             </div>
         })}
         </div>
+          )}
         <div className='text-center'>
         <NavLink to='/all-product'>
             <button className='bg-black text-white px-10 py-3 rounded-full text-xl hover:bg-black/[0.9]'>See All</button>
